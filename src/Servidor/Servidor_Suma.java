@@ -34,8 +34,7 @@ public class Servidor_Suma {
     		InputStream is2 = s2.getInputStream();
     		DataInputStream dis2= new DataInputStream(is2);
     		b=dis2.readUTF();
-
-
+    		
     		System.out.println("El numero recibido es " + b);
 
     		x = Integer.parseInt(a);
