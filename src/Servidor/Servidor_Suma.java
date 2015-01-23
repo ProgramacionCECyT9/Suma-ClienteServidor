@@ -26,14 +26,14 @@ public class Servidor_Suma {
     		DataInputStream dis= new DataInputStream(is);
     		a=dis.readUTF();
 
-    		System.out.println("El numeor recibido es " + a);
+    		System.out.println("El numero recibido es " + a);
     		System.out.println("En espera del segundo numero");
 
-    		Socket s2 = ss.accept();
+    		s1 = ss.accept();
 
-    		InputStream is2 = s2.getInputStream();
-    		DataInputStream dis2= new DataInputStream(is2);
-    		b=dis2.readUTF();
+    		is = s1.getInputStream();
+    		dis= new DataInputStream(is);
+    		b=dis.readUTF();
     		
     		System.out.println("El numero recibido es " + b);
 
@@ -44,7 +44,6 @@ public class Servidor_Suma {
     		System.out.println("El resultado de la suma es " + suma);
 
     		s1.close();
-    		s2.close();
 
     	} catch (IOException ioe2){
     		System.out.println(ioe2);

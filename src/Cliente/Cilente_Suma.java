@@ -12,6 +12,7 @@ public class Cilente_Suma {
     	try{
 
     		Socket sc1 = new Socket("localhost",5051);
+                Socket sc2 = new Socket("localhost",5051);
     		InputStreamReader isr = new InputStreamReader(System.in);
     		BufferedReader br = new BufferedReader(isr);
                 
@@ -21,13 +22,17 @@ public class Cilente_Suma {
     		cad1 = br.readLine();
     		dos1.writeUTF(cad1);
                 
-                OutputStream os2 = sc1.getOutputStream();
-    		DataOutputStream dos2 = new DataOutputStream(os1);
+                OutputStream os2 = sc2.getOutputStream();
+    		DataOutputStream dos2 = new DataOutputStream(os2);
     		System.out.println("Pulsa Otro Numero Para Enviarlo Al Servidor");
     		cad2 = br.readLine();
     		dos2.writeUTF(cad2);
-    		sc1.close();
+                
     		dos1.close();
+    		sc2.close();
+    		dos2.close();
+    		sc1.close();
+                
 
     	} catch (IOException ioe){
     		System.out.println(ioe);
